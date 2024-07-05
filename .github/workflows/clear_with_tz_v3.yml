@@ -1,0 +1,16 @@
+name: Database Cleanup
+
+on:
+  schedule:
+    - cron: '45 03,15 * * *'  # Runs at 3:45 AM and 15:45 PM in UTC
+    - cron: '35 14,18 * * *'  # Runs at 11:00 AM and 18:00 PM in UTC
+    - cron: '35 17,18 * * *'  # Runs at 11:00 AM and 18:00 PM in UTC
+
+jobs:
+  database-cleanup:
+    runs-on: ubuntu-latest
+    env:
+      TZ: 'Europe/Moscow'
+    steps:
+      - name: Run cleanup trigger
+        run: curl -X POST https://liliana-map.onrender.com/trigger-cleanup
