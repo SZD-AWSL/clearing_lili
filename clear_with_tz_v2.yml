@@ -3,8 +3,7 @@ name: First Cron Job
 on:
   schedule:
     - cron: "45 03,15 * * *"  # Runs at 3:45 AM and 15:45 PM in UTC
-    - cron: "35 12,18 * * *"  # Runs at 11:00 AM and 18:00 PM in UTC
-     - cron: "35 15,18 * * *"  # Runs at 11:00 AM and 18:00 PM in UTC 
+    - cron: "00 12,18 * * *"  # Runs at 11:00 AM and 18:00 PM in UTC
 
 jobs:
   cleanup-trigger-1:
