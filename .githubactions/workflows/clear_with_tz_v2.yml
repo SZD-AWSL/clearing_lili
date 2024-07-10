@@ -2,7 +2,7 @@ name: First Cron Job
 
 on:
   schedule:
-    - cron: "45 03,15 * * *"  # Runs at 3:45 AM and 15:45 PM in UTC
+    - cron: "35 3,7,15 * * *"  # Runs at 3:45 AM and 15:45 PM in UTC
     - cron: "50 1,17 * * *" 
 
 jobs:
