@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: "45 03,15 * * *" # Runs at 3:45 AM and 15:45 PM
+    - cron: "25 0,17 * * *" # Runs at 3:45 AM and 15:45 PM 
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    env:
+      TZ: "Europe/Moscow"
+
+    steps:
+      - name: Run cleanup trigger
+        run: curl -X POST https://liliana-map.onrender.com/trigger-cleanup
